@@ -3,6 +3,7 @@ const url = require('url');
 const isSubS = require('./src/utils/isSubSequence');
 // create a simple server object
 http.createServer(function(req, res) {
+  console.log('starting');
   const queryObject = url.parse(req.url,true).query;
   const subSorNot = isSubS.isSubsequence(queryObject.str1, queryObject.str2).toString();
   res.writeHead(200, {'Content-Type': 'text/html'});
